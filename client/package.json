@@ -1,17 +1,16 @@
 {
-  "name": "sick-fits-frontend",
+  "name": "portfolio_v4",
   "version": "1.0.0",
-  "description": "Sick Fits! An example React, GraphQL, Next and Apollo",
+  "description": "Another attempt at Portfolio using new tech",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 8888",
+    "dev": "next -p 7777",
     "build": "next build",
     "start": "next start",
     "test": "NODE_ENV=test jest --watch",
-    "test-win": "SET NODE_ENV=test&& jest --watch",
     "heroku-postbuild": "next build"
   },
-  "author": "",
+  "author": "Devin Zimmerman",
   "license": "ISC",
   "dependencies": {
     "apollo-boost": "^0.1.16",
@@ -55,8 +54,7 @@
     ],
     "transform": {
       "\\.(gql|graphql)$": "jest-transform-graphql",
-      ".*": "babel-jest",
-      "^.+\\.js?$": "babel-jest"
+      ".*": "babel-jest"
     }
   },
   "//": "This is our babel config, I prefer this over a .babelrc file",
