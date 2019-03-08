@@ -29,7 +29,7 @@ const BUTTON_COLORS = {
 }
 
 const StyledButton = styled.button`
-  font-size: 1.5rem;
+  font-size: 2rem;
   letter-spacing: 2px;
   text-transform: uppercase;
 
@@ -46,6 +46,7 @@ const StyledButton = styled.button`
 
 const Button = props => {
   const { children, color } = props
+  
   return <StyledButton color={color}>{children}</StyledButton>
 }
 

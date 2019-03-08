@@ -21,8 +21,8 @@ const StyledEmploymentChips = styled.div`
   margin-top: 7rem;
 
   @media only screen and (max-width: 600px) {
-      margin-top: 0;
-    } 
+    margin-top: 0;
+  }
 `
 
 const Employment = () => (
@@ -42,7 +42,9 @@ const Employment = () => (
         </Paragraph>
 
         <StyledEmploymentChips>
-          {employmentData.map(data => <Chip {...data} />)}
+          {employmentData.map(data => (
+            <Chip {...data} />
+          ))}
         </StyledEmploymentChips>
       </Section>
     </Container>
