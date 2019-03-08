@@ -81,6 +81,32 @@ const data = {
         'Adaptability'
       ]
     }
+  ],
+  education: [
+    {
+      title: 'Bachelor of Science - Finance',
+      src: '/static/ucf-logo.png',
+      details: [
+        'University of Central Florida',
+        '2006 - 2012'
+      ]
+    },
+    {
+      title: 'Certification - Full Stack Web Development',
+      src: '/static/ucf-logo.png',
+      details: [
+        'University of Central Florida',
+        '2016 - 2017'
+      ]
+    },
+    {
+      title: 'Certification - Cyber Security',
+      src: '/static/ud-logo.png',
+      details: [
+        'University of Denver',
+        '2018 - 2019'
+      ]
+    }
   ]
 }
 

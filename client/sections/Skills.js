@@ -67,12 +67,12 @@ const Skills = () => (
 
         <StyledSkillsChips>
           {skillsData.map(skill => (
-            <StyledSkillsChipBody>
+            <StyledSkillsChipBody key={skill.id}>
               <StyledSkillsChipTitle>{skill.title}</StyledSkillsChipTitle>
-
+            
               <StyledSkillsChipList>
                 {skill.details.map(deet => (
-                  <StyledSkillChipItem>{deet}</StyledSkillChipItem>
+                  <StyledSkillChipItem key={deet}>{deet}</StyledSkillChipItem>
                 ))}
               </StyledSkillsChipList>
             </StyledSkillsChipBody>

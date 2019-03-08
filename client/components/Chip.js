@@ -18,15 +18,22 @@ const StyledChipImg = styled.img`
 const Chip = ({ details, src, title }) => (
   <StyledChip>
     <StyledChipImg src={src} alt="icon" />
-    <Heading align="center" size={3}>{title}</Heading>
+    <Heading align="center" size={3}>
+      {title}
+    </Heading>
     {details.map(deet => (
-      <Paragraph align="center">{deet}</Paragraph>
+      <Paragraph align="center" key={deet}>
+        {deet}
+      </Paragraph>
     ))}
   </StyledChip>
 )
 
 Chip.propTypes = {
-  details: PropTypes.arrayOf(PropTypes.object).isRequired,
+  details: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.arrayOf(PropTypes.object)
+  ]).isRequired,
   src: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
 }

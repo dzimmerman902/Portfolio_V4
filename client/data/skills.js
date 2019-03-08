@@ -1,5 +1,6 @@
 const skillsData = [
   {
+    id: 1,
     title: 'Programming Languages',
     details: [
       'React',
@@ -26,6 +27,7 @@ const skillsData = [
     ]
   },
   {
+    id: 2,
     title: 'Technical Skills',
     details: [
       'Git Workflow',
@@ -43,6 +45,7 @@ const skillsData = [
     ]
   },
   {
+    id: 3,
     title: 'Soft Skills',
     details: [
       'Interpersonal Communication',

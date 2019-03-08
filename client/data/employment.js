@@ -1,5 +1,6 @@
 const employmentData = [
   {
+    id: 1,
     src: '/static/gaia.png',
     title: 'Front End Software Engineer',
     details: [
@@ -8,6 +9,7 @@ const employmentData = [
     ]
   },
   {
+    id: 2,
     src: '/static/groovytek-logo.png',
     title: 'Front End Software Engineer',
     details: [
@@ -16,6 +18,7 @@ const employmentData = [
     ]
   },
   {
+    id: 3,
     src: '/static/ud-logo.png',
     title: 'Teaching Assistant - Web Developement',
     details: [
@@ -24,6 +27,7 @@ const employmentData = [
     ]
   },
   {
+    id: 4,
     src: '/static/ebpg-logo.png',
     title: 'Internal Business Consultant',
     details: [

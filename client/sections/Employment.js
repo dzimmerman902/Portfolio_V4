@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import theme from '../themes/portfolio'
-import employmentData from '../data/employment'
+import data from '../data'
 
 import Chip from '../components/Chip'
 import Container from '../components/Container'
@@ -9,7 +8,7 @@ import Paragraph from '../components/Paragraph'
 import Section from '../components/Section'
 
 const StyledEmployment = styled.section`
-  background-color: ${theme.colorGreyLightest};
+  background-color: ${props => props.theme.colorGreyLightest};
 `
 
 const StyledEmploymentChips = styled.div`
@@ -42,8 +41,8 @@ const Employment = () => (
         </Paragraph>
 
         <StyledEmploymentChips>
-          {employmentData.map(data => (
-            <Chip {...data} />
+          {data.employment.map(item => (
+            <Chip key={item.id} {...item} />
           ))}
         </StyledEmploymentChips>
       </Section>
