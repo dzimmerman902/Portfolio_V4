@@ -7,11 +7,11 @@ import Heading from '../components/Heading'
 import Paragraph from '../components/Paragraph'
 import Section from '../components/Section'
 
-const StyledEmployment = styled.section`
+const StyEmployment = styled.section`
   background-color: ${props => props.theme.colorGreyLightest};
 `
 
-const StyledEmploymentChips = styled.div`
+const StyEmploymentChips = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   grid-column-gap: 5rem;
@@ -36,7 +36,7 @@ const Employment = () => {
   }, [])
 
   return (
-    <StyledEmployment>
+    <StyEmployment>
       <Container>
         <Section>
           <Heading align="center" color="black" size={1}>
@@ -51,14 +51,14 @@ const Employment = () => {
             <b>Click Image</b> for More Details
           </Paragraph>
 
-          <StyledEmploymentChips>
-            {employment.map(item => (
-              <Chip key={item._id} {...item} />
-            )) || null}
-          </StyledEmploymentChips>
+          <StyEmploymentChips>
+            {employment
+              .sort((a, b) => a.position - b.position)
+              .map(item => <Chip key={item._id} {...item} />) || null}
+          </StyEmploymentChips>
         </Section>
       </Container>
-    </StyledEmployment>
+    </StyEmployment>
   )
 }
 
