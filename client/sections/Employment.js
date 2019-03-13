@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import axios from 'axios'
-import data from '../data'
 
 import Chip from '../components/Chip'
 import Container from '../components/Container'
