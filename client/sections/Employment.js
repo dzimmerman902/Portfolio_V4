@@ -8,7 +8,7 @@ import Paragraph from '../components/Paragraph'
 import Section from '../components/Section'
 
 const StyEmployment = styled.section`
-  background-color: ${props => props.theme.colorGreyLightest};
+  background-color: ${({ theme }) => theme.colorGreyLightest};
 `
 
 const StyEmploymentChips = styled.div`

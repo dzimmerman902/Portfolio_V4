@@ -5,30 +5,34 @@ import moment from 'moment'
 import Heading from './Heading'
 import Paragraph from './Paragraph'
 
-const StyledChip = styled.div`
+const StyChip = styled.div`
   text-align: center;
 `
 
-const StyledChipImg = styled.img`
+const StyChipImg = styled.img`
   height: 20rem;
   margin-bottom: 2rem;
   text-align: center;
 `
 
 const Chip = ({ _id, company, end_date, src, start_date, title }) => (
-  <StyledChip>
-    <StyledChipImg src={src} alt="icon" />
+  <StyChip>
+    <StyChipImg src={src} alt="icon" />
+
     <Heading align="center" size={3}>
+
       {title}
     </Heading>
+
     <Paragraph align="center">{company}</Paragraph>
+
     <Paragraph align="center">
       {moment(start_date).format('MMMM YYYY')} &#8208;{' '}
       {moment(end_date).isValid()
         ? moment(end_date).format('MMMM YYYY')
         : 'Current'}
     </Paragraph>
-  </StyledChip>
+  </StyChip>
 )
 
 Chip.propTypes = {
