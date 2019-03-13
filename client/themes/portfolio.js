@@ -24,6 +24,9 @@ const portfolioTheme = {
   colorGreyDark: '#585959',
   colorGreyDarkRGB: '88, 89, 89',
 
+  // Color Section
+  colorSection: '#F3F3F3',
+
   // Color Misc
   colorWhite: '#ffffff',
   colorBlack: '#000000',

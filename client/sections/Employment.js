@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import Chip from '../components/Chip'
+import ChipEmployment from '../components/ChipEmployment'
 import Container from '../components/Container'
 import Heading from '../components/Heading'
 import Paragraph from '../components/Paragraph'
 import Section from '../components/Section'
 
 const StyEmployment = styled.section`
-  background-color: ${({ theme }) => theme.colorGreyLightest};
+  background-color: ${({ theme }) => theme.colorSection};
 `
 
 const StyEmploymentChips = styled.div`
@@ -54,7 +54,7 @@ const Employment = () => {
           <StyEmploymentChips>
             {employment
               .sort((a, b) => a.position - b.position)
-              .map(item => <Chip key={item._id} {...item} />) || null}
+              .map(item => <ChipEmployment key={item._id} {...item} />) || null}
           </StyEmploymentChips>
         </Section>
       </Container>

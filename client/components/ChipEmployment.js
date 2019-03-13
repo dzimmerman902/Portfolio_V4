@@ -15,12 +15,11 @@ const StyChipImg = styled.img`
   text-align: center;
 `
 
-const Chip = ({ _id, company, end_date, src, start_date, title }) => (
+const ChipEmployment = ({ _id, company, end_date, src, start_date, title }) => (
   <StyChip>
     <StyChipImg src={src} alt="icon" />
 
     <Heading align="center" size={3}>
-
       {title}
     </Heading>
 
@@ -35,9 +34,9 @@ const Chip = ({ _id, company, end_date, src, start_date, title }) => (
   </StyChip>
 )
 
-Chip.propTypes = {
+ChipEmployment.propTypes = {
   src: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
 }
 
-export default Chip
+export default ChipEmployment

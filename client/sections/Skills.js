@@ -7,7 +7,7 @@ import Heading from '../components/Heading'
 import Section from '../components/Section'
 
 const StyledSkills = styled.div`
-  background-image: ${theme.backgroundImage()}, url('/static/devin-2.jpg');
+  background-image: ${theme.backgroundImage()}, url('/static/comp-1.jpg');
   background-size: cover;
 `
 
