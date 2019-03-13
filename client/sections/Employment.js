@@ -1,4 +1,6 @@
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import axios from 'axios'
 import data from '../data'
 
 import Chip from '../components/Chip'
@@ -24,30 +26,42 @@ const StyledEmploymentChips = styled.div`
   }
 `
 
-const Employment = () => (
-  <StyledEmployment>
-    <Container>
-      <Section>
-        <Heading align="center" color="black" size={1}>
-          Employment History
-        </Heading>
+const Employment = () => {
+  const [employment, setEmployment] = useState([])
 
-        <Paragraph align="center">
-          A Web Developer with Client-Centric Sensibilities.
-        </Paragraph>
+  useEffect(() => {
+    fetch('https://devinzimmerman-api.herokuapp.com/v1/employment')
+      .then(response => response.json())
+      .then(results => {
+        setEmployment(results)
+      })
+  }, [])
 
-        <Paragraph align="center">
-          <b>Click Image</b> for More Details
-        </Paragraph>
+  return (
+    <StyledEmployment>
+      <Container>
+        <Section>
+          <Heading align="center" color="black" size={1}>
+            Employment History
+          </Heading>
 
-        <StyledEmploymentChips>
-          {data.employment.map(item => (
-            <Chip key={item.id} {...item} />
-          ))}
-        </StyledEmploymentChips>
-      </Section>
-    </Container>
-  </StyledEmployment>
-)
+          <Paragraph align="center">
+            A Web Developer with Client-Centric Sensibilities.
+          </Paragraph>
+
+          <Paragraph align="center">
+            <b>Click Image</b> for More Details
+          </Paragraph>
+
+          <StyledEmploymentChips>
+            {employment.map(item => (
+              <Chip key={item._id} {...item} />
+            )) || null}
+          </StyledEmploymentChips>
+        </Section>
+      </Container>
+    </StyledEmployment>
+  )
+}
 
 export default Employment

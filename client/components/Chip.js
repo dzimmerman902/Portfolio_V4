@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import theme from '../themes/portfolio'
+import moment from 'moment'
 
 import Heading from './Heading'
 import Paragraph from './Paragraph'
@@ -15,25 +15,23 @@ const StyledChipImg = styled.img`
   text-align: center;
 `
 
-const Chip = ({ details, src, title }) => (
+const Chip = ({ _id, company, end_date, src, start_date, title }) => (
   <StyledChip>
     <StyledChipImg src={src} alt="icon" />
     <Heading align="center" size={3}>
       {title}
     </Heading>
-    {details.map(deet => (
-      <Paragraph align="center" key={deet}>
-        {deet}
-      </Paragraph>
-    ))}
+    <Paragraph align="center">{company}</Paragraph>
+    <Paragraph align="center">
+      {moment(start_date).format('MMMM YYYY')} &#8208;{' '}
+      {moment(end_date).isValid()
+        ? moment(end_date).format('MMMM YYYY')
+        : 'Current'}
+    </Paragraph>
   </StyledChip>
 )
 
 Chip.propTypes = {
-  details: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.string),
-    PropTypes.arrayOf(PropTypes.object)
-  ]).isRequired,
   src: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
 }
