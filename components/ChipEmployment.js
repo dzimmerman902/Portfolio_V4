@@ -15,23 +15,28 @@ const StyChipImg = styled.img`
   text-align: center;
 `
 
-const ChipEducation = ({ _id, end_date, school, src, start_date, title }) => (
+const ChipEmployment = ({ company, end_date, img, start_date, title }) => (
   <StyChip>
-    <StyChipImg src={src} alt="icon" />
+    <StyChipImg src={`/static/${img}`} alt="icon" />
 
     <Heading align="center" size={3}>
       {title}
     </Heading>
-    
-    <Paragraph align="center">{school}</Paragraph>
+
+    <Paragraph align="center">{company}</Paragraph>
 
     <Paragraph align="center">
-      {moment(start_date).format('YYYY')} &#8208;{' '}
+      {moment(start_date).format('MMMM YYYY')} &#8208;{' '}
       {moment(end_date).isValid()
-        ? moment(end_date).format('YYYY')
+        ? moment(end_date).format('MMMM YYYY')
         : 'Current'}
     </Paragraph>
   </StyChip>
 )
 
-export default ChipEducation
+ChipEmployment.propTypes = {
+  src: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
+}
+
+export default ChipEmployment

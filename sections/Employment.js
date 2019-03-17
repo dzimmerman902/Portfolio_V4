@@ -29,7 +29,7 @@ const Employment = () => {
 
   useEffect(() => {
     fetch('https://devinzimmerman-api.herokuapp.com/v1/employment')
-      .then(response => response.json())
+      .then(res => res.json())
       .then(results => {
         setEmployment(results)
       })
@@ -53,7 +53,7 @@ const Employment = () => {
 
           <StyEmploymentChips>
             {employment
-              .sort((a, b) => a.position - b.position)
+              .sort((a, b) => a.order - b.order)
               .map(item => <ChipEmployment key={item._id} {...item} />) || null}
           </StyEmploymentChips>
         </Section>
