@@ -9,6 +9,7 @@ import Education from '../sections/Education'
 import Employment from '../sections/Employment'
 import Projects from '../sections/Projects'
 import Skills from '../sections/Skills'
+import WhatPeopleSay from '../sections/WhatPeopleSay'
 
 const Home = () => (
   <ThemeProvider theme={portfolioTheme}>
@@ -21,6 +22,7 @@ const Home = () => (
         <Skills />
         <Education />
         <Projects />
+        <WhatPeopleSay />
       </main>
     </Fragment>
   </ThemeProvider>

@@ -8,7 +8,7 @@ const StyChipSkills = styled.div`
 
   display: inline-block;
   padding: 0.8rem;
-  background-color: ${props => props.theme.colorPrimary};
+  background-color: ${({ theme }) => theme.colorPrimary};
   border-radius: 0.8rem;
   transition: all 0.2s;
 

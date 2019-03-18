@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import theme from '../themes/portfolio'
 
 import ChipSkills from '../components/ChipSkills'
 import Container from '../components/Container'
@@ -8,7 +7,7 @@ import Heading from '../components/Heading'
 import Section from '../components/Section'
 
 const StySkills = styled.div`
-  background-image: ${theme.backgroundImage()}, url('/static/comp-1.jpg');
+  background-image: ${({ theme }) => theme.backgroundImage()}, url('/static/comp-1.jpg');
   background-size: cover;
 `
 
@@ -21,13 +20,13 @@ const StySkillsContent = styled.div`
 `
 
 const StySkillsCard = styled.div`
-  background-color: ${props => props.theme.colorWhite};
+  background-color: ${({ theme }) => theme.colorWhite};
   border-radius: 0.8rem;
   padding: 2rem;
 `
 
 const StySkillsCardTitle = styled.div`
-  color: ${props => props.theme.colorBlack};
+  color: ${({ theme }) => theme.colorBlack};
   font-size: 2rem;
   font-weight: 800;
 
@@ -85,7 +84,7 @@ const Skills = () => {
                 .sort((a, b) => a.order - b.order)
                 .map(item => <ChipSkills key={item._id} {...item} />) || null}
             </StySkillsCard>
-            
+
             <StySkillsCard>
               <StySkillsCardTitle>Soft Skills</StySkillsCardTitle>
               {technical

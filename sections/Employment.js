@@ -11,7 +11,7 @@ const StyEmployment = styled.section`
   background-color: ${({ theme }) => theme.colorSection};
 `
 
-const StyEmploymentChips = styled.div`
+const StyEmploymentContent = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   grid-column-gap: 5rem;
@@ -47,15 +47,11 @@ const Employment = () => {
             A Web Developer with Client-Centric Sensibilities.
           </Paragraph>
 
-          <Paragraph align="center">
-            <b>Click Image</b> for More Details
-          </Paragraph>
-
-          <StyEmploymentChips>
+          <StyEmploymentContent>
             {employment
               .sort((a, b) => a.order - b.order)
               .map(item => <ChipEmployment key={item._id} {...item} />) || null}
-          </StyEmploymentChips>
+          </StyEmploymentContent>
         </Section>
       </Container>
     </StyEmployment>
