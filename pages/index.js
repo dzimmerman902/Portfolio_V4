@@ -9,20 +9,20 @@ import Education from '../sections/Education'
 import Employment from '../sections/Employment'
 import Projects from '../sections/Projects'
 import Skills from '../sections/Skills'
-import WhatPeopleSay from '../sections/WhatPeopleSay'
+import References from '../sections/References'
 
 const Home = () => (
   <ThemeProvider theme={portfolioTheme}>
     <Fragment>
       <GlobalStyle />
-      <main className="home">
+      <main>
         <Banner />
         <Built />
         <Employment />
         <Skills />
         <Education />
         <Projects />
-        <WhatPeopleSay />
+        <References />
       </main>
     </Fragment>
   </ThemeProvider>
