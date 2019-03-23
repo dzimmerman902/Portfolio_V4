@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import ChipEducation from '../components/ChipEducation'
 import Container from '../components/Container'
 import Heading from '../components/Heading'
-import Section from '../components/Section'
+import Row from '../components/Row'
+import School from '../components/School'
 
-const StyEducation = styled.section`
+const Section = styled.section`
   background-color: ${({ theme }) => theme.colorSection};
 `
 
-const StyEductionChips = styled.div`
+const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   grid-column-gap: 5rem;
@@ -34,21 +34,21 @@ const Education = () => {
   }, [])
 
   return (
-    <StyEducation>
+    <Section>
       <Container>
-        <Section>
+        <Row>
           <Heading align="center" size={1}>
             Education & Courses
           </Heading>
 
-          <StyEductionChips>
+          <Content>
             {education
               .sort((a, b) => a.order - b.order)
-              .map(item => <ChipEducation key={item.id} {...item} />) || null}
-          </StyEductionChips>
-        </Section>
+              .map(item => <School key={item._id} {...item} />) || null}
+          </Content>
+        </Row>
       </Container>
-    </StyEducation>
+    </Section>
   )
 }
 

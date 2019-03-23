@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import ChipProjects from '../components/ChipProjects'
+import ChipProjects from '../components/Project'
 import Container from '../components/Container'
 import Heading from '../components/Heading'
 import Paragraph from '../components/Paragraph'
-import Section from '../components/Section'
+import Row from '../components/Row'
 
-const StyProjects = styled.section`
+const Section = styled.section`
   background-color: ${({ theme }) => theme.colorSection};
 `
 
-const StyProjectsContent = styled.div`
+const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   grid-column-gap: 5rem;
@@ -35,9 +35,9 @@ const Projects = () => {
   }, [])
 
   return (
-    <StyProjects>
+    <Section>
       <Container>
-        <Section>
+        <Row>
           <Heading align="center" size={1}>
             Personal Projects
           </Heading>
@@ -46,14 +46,14 @@ const Projects = () => {
             <b>Hover/Click</b> picture for more information
           </Paragraph>
 
-          <StyProjectsContent>
+          <Content>
             {projects
               .sort((a, b) => a.order - b.order)
               .map(item => <ChipProjects key={item._id} {...item} />) || null}
-          </StyProjectsContent>
-        </Section>
+          </Content>
+        </Row>
       </Container>
-    </StyProjects>
+    </Section>
   )
 }
 

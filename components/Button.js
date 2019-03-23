@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 const BUTTON_COLORS = {
@@ -48,6 +49,14 @@ const Button = props => {
   const { children, color } = props
   
   return <StyledButton color={color}>{children}</StyledButton>
+}
+
+Button.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired,
+  color: PropTypes.string.isRequired
 }
 
 export default Button

@@ -5,10 +5,10 @@ const portfolioTheme = {
   },
 
   // Background Image
-  backgroundImage() {
+  backgroundImage(alpha = 0) {
     return `linear-gradient(to left bottom, rgba(${
       this.colorGreyDarkRGB
-    }, 0.6), rgba(${this.colorGreyDarkRGB}, 0.6))`
+    }, 0.6), rgba(${this.colorGreyDarkRGB}, ${alpha}))`
   },
 
   // Color Primary
@@ -24,7 +24,7 @@ const portfolioTheme = {
   colorGreyDark: '#585959',
   colorGreyDarkRGB: '88, 89, 89',
 
-  // Color Section
+  // Color Row
   colorSection: '#F3F3F3',
 
   // Color Misc

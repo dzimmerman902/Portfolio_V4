@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import ChipSkills from '../components/ChipSkills'
+import Skill from '../components/Skill'
 import Container from '../components/Container'
 import Heading from '../components/Heading'
-import Section from '../components/Section'
+import Row from '../components/Row'
 
-const StySkills = styled.div`
-  background-image: ${({ theme }) => theme.backgroundImage()}, url('/static/comp-1.jpg');
+const Section = styled.div`
+  background-image: ${({ theme }) => theme.backgroundImage(0.4)},
+    url('/static/comp-1.jpg');
   background-size: cover;
 `
 
-const StySkillsContent = styled.div`
+const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   grid-auto-rows: auto;
@@ -19,13 +20,13 @@ const StySkillsContent = styled.div`
   grid-row-gap: 2rem;
 `
 
-const StySkillsCard = styled.div`
+const Card = styled.div`
   background-color: ${({ theme }) => theme.colorWhite};
   border-radius: 0.8rem;
   padding: 2rem;
 `
 
-const StySkillsCardTitle = styled.div`
+const Title = styled.div`
   color: ${({ theme }) => theme.colorBlack};
   font-size: 2rem;
   font-weight: 800;
@@ -59,42 +60,38 @@ const Skills = () => {
   }, [])
 
   return (
-    <StySkills>
+    <Section>
       <Container>
-        <Section>
+        <Row>
           <Heading align="center" color="white" size={1}>
             Skills and Technologies
           </Heading>
 
-          <StySkillsContent>
-            <StySkillsCard>
-              <StySkillsCardTitle>
-                Programming Languages / Libraries
-              </StySkillsCardTitle>
+          <Content>
+            <Card>
+              <Title>Programming Languages / Libraries</Title>
               {programming
                 .sort((a, b) => a.order - b.order)
-                .map(item => <ChipSkills key={item._id} {...item} />) || null}
-            </StySkillsCard>
+                .map(item => <Skill key={item._id} {...item} />) || null}
+            </Card>
 
-            <StySkillsCard>
-              <StySkillsCardTitle>
-                Technical Skills / Software
-              </StySkillsCardTitle>
+            <Card>
+              <Title>Technical Skills / Software</Title>
               {soft
                 .sort((a, b) => a.order - b.order)
-                .map(item => <ChipSkills key={item._id} {...item} />) || null}
-            </StySkillsCard>
+                .map(item => <Skill key={item._id} {...item} />) || null}
+            </Card>
 
-            <StySkillsCard>
-              <StySkillsCardTitle>Soft Skills</StySkillsCardTitle>
+            <Card>
+              <Title>Soft Skills</Title>
               {technical
                 .sort((a, b) => a.order - b.order)
-                .map(item => <ChipSkills key={item._id} {...item} />) || null}
-            </StySkillsCard>
-          </StySkillsContent>
-        </Section>
+                .map(item => <Skill key={item._id} {...item} />) || null}
+            </Card>
+          </Content>
+        </Row>
       </Container>
-    </StySkills>
+    </Section>
   )
 }
 

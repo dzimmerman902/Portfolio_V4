@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import Container from '../components/Container'
 import Heading from '../components/Heading'
-import Section from '../components/Section'
+import Row from '../components/Row'
 
 const techs = [
   'react.png',
@@ -12,44 +12,40 @@ const techs = [
   'mongodb.png'
 ]
 
-const StyBuilt = styled.section`
+const Section = styled.section`
   background-color: ${({ theme }) => theme.colorSection};
 `
 
-const StyBuiltChips = styled.section`
+const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-column-gap: 3rem;
   grid-row-gap: 3rem;
+  justify-items: center;
+  
   margin-top: 7rem;
 `
 
-const StyChip = styled.div`
-  text-align: center;
-`
-
-const StyBuiltImg = styled.img`
+const Img = styled.img`
   height: 20rem;
 `
 
 const Built = () => (
-  <StyBuilt>
+  <Section>
     <Container>
-      <Section>
+      <Row>
         <Heading align="center" size={1}>
           Technology Used
         </Heading>
 
-        <StyBuiltChips>
+        <Content>
           {techs.map(tech => (
-            <StyChip>
-              <StyBuiltImg src={`/static/${tech}`} alt={tech} />
-            </StyChip>
+            <Img src={`/static/${tech}`} alt={tech} />
           ))}
-        </StyBuiltChips>
-      </Section>
+        </Content>
+      </Row>
     </Container>
-  </StyBuilt>
+  </Section>
 )
 
 export default Built
