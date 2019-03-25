@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const StyChipSkills = styled.div`
-    color: white;
+const Name = styled.div`
+  color: white;
   font-size: 1.8rem;
   cursor: pointer;
 
@@ -23,8 +22,8 @@ const StyChipSkills = styled.div`
   }
 `
 
-const ChipSkills = ({ name }) => (
-  <StyChipSkills>{name}</StyChipSkills>
+const Skill = ({ name }) => (
+  <Name>{name}</Name>
 )
 
-export default ChipSkills
+export default Skill

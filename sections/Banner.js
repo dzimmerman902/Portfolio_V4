@@ -4,18 +4,18 @@ import portfolioTheme from '../themes/portfolio'
 import Button from '../components/Button'
 import Container from '../components/Container'
 
-const StyledBanner = styled.section`
+const Section = styled.section`
   height: 95vh;
-  background-image: ${portfolioTheme.backgroundImage()},
+  background-image: ${portfolioTheme.backgroundImage(0.6)},
     url('/static/devin-1.jpg');
   background-size: cover;
 `
 
-const StyledHeader = styled.div`
+const Header = styled.div`
   padding-top: 22rem;
 `
 
-const StyledHeaderTitle = styled.div`
+const Title = styled.div`
   color: ${props => props.theme.colorWhite};
   font-family: ${props => props.theme.fontFamilyPrimary};
   font-size: 9rem;
@@ -26,7 +26,7 @@ const StyledHeaderTitle = styled.div`
   margin-bottom: 2rem;
 `
 
-const StyledHeaderSubText = styled.div`
+const SubTitle = styled.div`
   color: ${props => props.theme.colorWhite};
   font-family: ${props => props.theme.fontFamilyPrimary};
   font-size: 3rem;
@@ -36,15 +36,15 @@ const StyledHeaderSubText = styled.div`
 `
 
 const Banner = () => (
-  <StyledBanner>
+  <Section>
     <Container>
-      <StyledHeader className="header">
-        <StyledHeaderTitle className="title">Devin Zimmerman</StyledHeaderTitle>
-        <StyledHeaderSubText className="sub-text">Full Stack Web Developer</StyledHeaderSubText>
+      <Header>
+        <Title>Devin Zimmerman</Title>
+        <SubTitle>Full Stack Web Developer</SubTitle>
         <Button color="light">Portfolio</Button>
-      </StyledHeader>
+      </Header>
     </Container>
-  </StyledBanner>
+  </Section>
 )
 
 export default Banner

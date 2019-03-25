@@ -1,23 +1,22 @@
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import moment from 'moment'
 
 import Heading from './Heading'
 import Paragraph from './Paragraph'
 
-const StyChip = styled.div`
+const Card = styled.div`
   text-align: center;
 `
 
-const StyChipImg = styled.img`
+const Img = styled.img`
   height: 20rem;
   margin-bottom: 2rem;
   text-align: center;
 `
 
-const ChipEducation = ({ end_date, img, school, start_date, title }) => (
-  <StyChip>
-    <StyChipImg src={`/static/${img}`} alt="icon" />
+const School = ({ end_date, img, school, start_date, title }) => (
+  <Card>
+    <Img src={`/static/${img}`} alt="icon" />
 
     <Heading align="center" size={3}>
       {title}
@@ -31,7 +30,7 @@ const ChipEducation = ({ end_date, img, school, start_date, title }) => (
         ? moment(end_date).format('YYYY')
         : 'Current'}
     </Paragraph>
-  </StyChip>
+  </Card>
 )
 
-export default ChipEducation
+export default School

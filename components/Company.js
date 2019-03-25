@@ -5,19 +5,19 @@ import moment from 'moment'
 import Heading from './Heading'
 import Paragraph from './Paragraph'
 
-const StyChip = styled.div`
+const Card = styled.div`
   text-align: center;
 `
 
-const StyChipImg = styled.img`
+const Img = styled.img`
   height: 20rem;
   margin-bottom: 2rem;
   text-align: center;
 `
 
-const ChipEmployment = ({ company, end_date, img, start_date, title }) => (
-  <StyChip>
-    <StyChipImg src={`/static/${img}`} alt="icon" />
+const Company = ({ company, end_date, img, start_date, title }) => (
+  <Card>
+    <Img src={`/static/${img}`} alt="icon" />
 
     <Heading align="center" size={3}>
       {title}
@@ -31,12 +31,15 @@ const ChipEmployment = ({ company, end_date, img, start_date, title }) => (
         ? moment(end_date).format('MMMM YYYY')
         : 'Current'}
     </Paragraph>
-  </StyChip>
+  </Card>
 )
 
-ChipEmployment.propTypes = {
-  src: PropTypes.string.isRequired,
+Company.propTypes = {
+  company: PropTypes.string.isRequired,
+  end_date: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  start_date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
 }
 
-export default ChipEmployment
+export default Company

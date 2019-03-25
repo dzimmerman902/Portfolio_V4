@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const StyChipProjectsText = styled.div`
+const Text = styled.div`
   position: absolute;
   padding: 1.2rem;
   top: 50%;
@@ -13,7 +13,7 @@ const StyChipProjectsText = styled.div`
   transition: all 0.3s;
 `
 
-const StyChipProjectsBgi = styled.div`
+const BackgroundImg = styled.div`
   background-image: ${({ img }) => `url(/static/${img})`};
   background-size: cover;
   background-position: center;
@@ -23,44 +23,46 @@ const StyChipProjectsBgi = styled.div`
   transition: all 0.3s;
 `
 
-const StyChipProjects = styled.div`
+const Card = styled.div`
   border-radius: 1rem;
   box-shadow: 2px 3px 2rem ${({ theme }) => theme.colorBlack};
   overflow: hidden;
   position: relative;
 
   &:hover {
-    ${StyChipProjectsText} {
+    ${Text} {
       opacity: 1;
     }
 
-    ${StyChipProjectsBgi} {
-      filter: blur(3px) brightness(60%);
+    ${BackgroundImg} {
+      filter: blur(3px) brightness(50%);
       transform: scale(1.1);
     }
   }
 `
 
-const StyChipProjectsName = styled.div`
+const Name = styled.div`
   color: ${({ theme }) => theme.colorWhite};
-  font-size: 2.6rem;
+  font-size: 2.3rem;
+  font-weight: 700;
 
   cursor: default;
   margin-bottom: 1rem;
   transition: all 0.5s;
 `
-const StyChipProjectsDescription = styled.div`
+const Description = styled.div`
   color: ${({ theme }) => theme.colorWhite};
-  font-size: 1.6rem;
+  font-size: 1.7rem;
+  line-height: 1.15;
 
   cursor: default;
   margin-bottom: 1rem;
   transition: all 0.5s;
 `
 
-const StyChipProjectsLink = styled.a`
+const Link = styled.a`
   color: ${({ theme }) => theme.colorWhite};
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   text-decoration: none;
 
   border-bottom: 1px solid ${({ theme }) => theme.colorWhite};
@@ -68,15 +70,22 @@ const StyChipProjectsLink = styled.a`
   transition: all 0.5s;
 `
 
-const ChipProjects = ({ description, github, img, name }) => (
-  <StyChipProjects>
-    <StyChipProjectsText>
-      <StyChipProjectsName>{name}</StyChipProjectsName>
-      <StyChipProjectsDescription>{description}</StyChipProjectsDescription>
-      <StyChipProjectsLink href={github}>See More</StyChipProjectsLink>
-    </StyChipProjectsText>
-    <StyChipProjectsBgi img={img} />
-  </StyChipProjects>
+const Project = ({ description, github, img, name }) => (
+  <Card>
+    <Text>
+      <Name>{name}</Name>
+      <Description>{description}</Description>
+      <Link href={github} target="_blank">See More</Link>
+    </Text>
+    <BackgroundImg img={img} />
+  </Card>
 )
 
-export default ChipProjects
+Project.propTypes = {
+  description: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+}
+
+export default Project

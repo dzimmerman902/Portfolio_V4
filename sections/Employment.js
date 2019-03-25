@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import ChipEmployment from '../components/ChipEmployment'
+import Company from '../components/Company'
 import Container from '../components/Container'
 import Heading from '../components/Heading'
 import Paragraph from '../components/Paragraph'
-import Section from '../components/Section'
+import Row from '../components/Row'
 
-const StyEmployment = styled.section`
+const Section = styled.section`
   background-color: ${({ theme }) => theme.colorSection};
 `
 
-const StyEmploymentContent = styled.div`
+const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   grid-column-gap: 5rem;
@@ -25,20 +25,20 @@ const StyEmploymentContent = styled.div`
 `
 
 const Employment = () => {
-  const [employment, setEmployment] = useState([])
+  const [companies, setCompanies] = useState([])
 
   useEffect(() => {
     fetch('https://devinzimmerman-api.herokuapp.com/v1/employment')
       .then(res => res.json())
       .then(results => {
-        setEmployment(results)
+        setCompanies(results)
       })
   }, [])
 
   return (
-    <StyEmployment>
+    <Section>
       <Container>
-        <Section>
+        <Row>
           <Heading align="center" color="black" size={1}>
             Employment History
           </Heading>
@@ -47,14 +47,14 @@ const Employment = () => {
             A Web Developer with Client-Centric Sensibilities.
           </Paragraph>
 
-          <StyEmploymentContent>
-            {employment
+          <Content>
+            {companies
               .sort((a, b) => a.order - b.order)
-              .map(item => <ChipEmployment key={item._id} {...item} />) || null}
-          </StyEmploymentContent>
-        </Section>
+              .map(item => <Company key={item._id} {...item} />) || null}
+          </Content>
+        </Row>
       </Container>
-    </StyEmployment>
+    </Section>
   )
 }
 

@@ -7,22 +7,24 @@ import Banner from '../sections/Banner'
 import Built from '../sections/Built'
 import Education from '../sections/Education'
 import Employment from '../sections/Employment'
+import Hobbies from '../sections/Hobbies'
 import Projects from '../sections/Projects'
 import Skills from '../sections/Skills'
-import WhatPeopleSay from '../sections/WhatPeopleSay'
+import References from '../sections/References'
 
 const Home = () => (
   <ThemeProvider theme={portfolioTheme}>
     <Fragment>
       <GlobalStyle />
-      <main className="home">
+      <main>
         <Banner />
         <Built />
         <Employment />
         <Skills />
         <Education />
         <Projects />
-        <WhatPeopleSay />
+        <References />
+        <Hobbies />
       </main>
     </Fragment>
   </ThemeProvider>
