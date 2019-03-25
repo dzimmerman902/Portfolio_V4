@@ -25,13 +25,13 @@ const Content = styled.div`
 `
 
 const Employment = () => {
-  const [employment, setEmployment] = useState([])
+  const [companies, setCompanies] = useState([])
 
   useEffect(() => {
     fetch('https://devinzimmerman-api.herokuapp.com/v1/employment')
       .then(res => res.json())
       .then(results => {
-        setEmployment(results)
+        setCompanies(results)
       })
   }, [])
 
@@ -48,7 +48,7 @@ const Employment = () => {
           </Paragraph>
 
           <Content>
-            {employment
+            {companies
               .sort((a, b) => a.order - b.order)
               .map(item => <Company key={item._id} {...item} />) || null}
           </Content>
