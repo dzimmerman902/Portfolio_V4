@@ -40,7 +40,7 @@ const Built = () => (
 
         <Content>
           {techs.map(tech => (
-            <Img src={`/static/${tech}`} alt={tech} />
+            <Img src={`/static/${tech}`} key={tech} alt={tech} />
           ))}
         </Content>
       </Row>

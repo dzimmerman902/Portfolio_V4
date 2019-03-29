@@ -7,7 +7,9 @@ import Hobby from '../components/Hobby'
 import Paragraph from '../components/Paragraph'
 import Row from '../components/Row'
 
-const Section = styled.section``
+const Section = styled.section`
+  background-color: ${({ theme }) => theme.colorSection};
+`
 
 const Content = styled.div`
   display: grid;

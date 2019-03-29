@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import portfolioTheme from '../themes/portfolio'
 import GlobalStyle from '../themes/globalStyle'
 
+import Activities from '../sections/Activities'
 import Banner from '../sections/Banner'
 import Built from '../sections/Built'
 import Education from '../sections/Education'
@@ -25,6 +26,7 @@ const Home = () => (
         <Projects />
         <References />
         <Hobbies />
+        <Activities />
       </main>
     </Fragment>
   </ThemeProvider>

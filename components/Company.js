@@ -36,10 +36,14 @@ const Company = ({ company, end_date, img, start_date, title }) => (
 
 Company.propTypes = {
   company: PropTypes.string.isRequired,
-  end_date: PropTypes.string.isRequired,
+  end_date: PropTypes.string,
   img: PropTypes.string.isRequired,
   start_date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
+}
+
+Company.defaultProps = {
+  end_date: null
 }
 
 export default Company

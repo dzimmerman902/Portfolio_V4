@@ -7,10 +7,17 @@ const StyledParagraph = styled.p`
   line-height: 1.5;
   text-align: ${props => props.align || 'left'};
   text-transform: ${({ transform }) => transform || ''};
+
+  margin-bottom: ${({ mb }) => mb || ''};
 `
 
-const Paragraph = ({ align, children, color, style, transform }) => (
-  <StyledParagraph align={align} color={color} style={style} transform={transform}>
+const Paragraph = ({ align, children, color, mb, style, transform }) => (
+  <StyledParagraph
+    align={align}
+    color={color}
+    mb={mb}
+    style={style}
+    transform={transform}>
     {children}
   </StyledParagraph>
 )
