@@ -11,13 +11,22 @@ const StyledParagraph = styled.p`
   margin-bottom: ${({ mb }) => mb || ''};
 `
 
-const Paragraph = ({ align, children, color, mb, style, transform }) => (
+const Paragraph = ({
+  align,
+  children,
+  color,
+  mb,
+  style,
+  transform,
+  ...rest
+}) => (
   <StyledParagraph
     align={align}
     color={color}
     mb={mb}
     style={style}
-    transform={transform}>
+    transform={transform}
+    {...rest}>
     {children}
   </StyledParagraph>
 )

@@ -5,7 +5,7 @@ import Button from '../components/Button'
 import Container from '../components/Container'
 
 const Section = styled.section`
-  height: 95vh;
+  height: 85rem;
   background-image: ${portfolioTheme.backgroundImage(0.6)},
     url('/static/devin-1.jpg');
   background-size: cover;
@@ -36,7 +36,7 @@ const SubTitle = styled.div`
 `
 
 const Banner = () => (
-  <Section>
+  <Section id="home">
     <Container>
       <Header>
         <Title>Devin Zimmerman</Title>

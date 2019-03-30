@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import Reference from '../components/Reference'
 import Container from '../components/Container'
 import Heading from '../components/Heading'
 import Paragraph from '../components/Paragraph'
+import Reference from '../components/Reference'
 import Row from '../components/Row'
 
 const Section = styled.div`
@@ -33,7 +33,7 @@ const References = () => {
   }, [])
 
   return (
-    <Section>
+    <Section id="references">
       <Container>
         <Row>
           <Paragraph align="center" color="white" transform="uppercase" style={{ marginBottom: '1rem' }}>References</Paragraph>

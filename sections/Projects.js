@@ -35,7 +35,7 @@ const Projects = () => {
   }, [])
 
   return (
-    <Section>
+    <Section id="projects">
       <Container>
         <Row>
           <Heading align="center" size={1}>

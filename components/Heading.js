@@ -26,7 +26,7 @@ const StyledHeading3 = styled.h3`
   text-align: ${props => props.align || 'left'};
   text-transform: uppercase;
 
-  margin-bottom: 1.2rem;
+  margin-bottom: ${({ mb }) => mb || '1.2rem'};
 `
 
 const HeadingObj = {
@@ -37,7 +37,7 @@ const HeadingObj = {
 const Heading = props => {
   const { size } = props
 
-  return <>{HeadingObj[size](props)}</>
+  return HeadingObj[size](props)
 }
 
 Heading.propTypes = {

@@ -36,7 +36,7 @@ const Employment = () => {
   }, [])
 
   return (
-    <Section>
+    <Section id="employment">
       <Container>
         <Row>
           <Heading align="center" color="black" size={1}>

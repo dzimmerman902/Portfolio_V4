@@ -6,11 +6,13 @@ import GlobalStyle from '../themes/globalStyle'
 import Activities from '../sections/Activities'
 import Banner from '../sections/Banner'
 import Built from '../sections/Built'
+import Contact from '../sections/Contact'
 import Education from '../sections/Education'
 import Employment from '../sections/Employment'
 import Hobbies from '../sections/Hobbies'
 import Projects from '../sections/Projects'
 import Skills from '../sections/Skills'
+import Sidebar from '../components/Sidebar'
 import References from '../sections/References'
 
 const Home = () => (
@@ -18,6 +20,7 @@ const Home = () => (
     <Fragment>
       <GlobalStyle />
       <main>
+        <Sidebar />
         <Banner />
         <Built />
         <Employment />
@@ -27,6 +30,7 @@ const Home = () => (
         <References />
         <Hobbies />
         <Activities />
+        <Contact />
       </main>
     </Fragment>
   </ThemeProvider>

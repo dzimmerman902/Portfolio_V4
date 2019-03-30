@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 import portfolioTheme from './portfolio'
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,800');
+  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,800');
 
   *, *::after, *::before {
     margin: 0;
@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%;
-    padding: 2rem;
 
     @media only screen and (max-width: 1200px) {
       font-size: 56.25%;
@@ -42,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: ${portfolioTheme.fontFamilyPrimary};
     vertical-align: baseline;
+    color: inherit;
   }
 
   /* HTML5 display-role reset for older browsers */

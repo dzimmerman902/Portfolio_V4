@@ -19,6 +19,7 @@ const portfolioTheme = {
   // Color Grey
   colorGreyLightest: '#E6E6E6',
   colorGreyLighter: '#C1C2C2',
+  colorGreyLight: '#F3F3F3',
   colorGrey: '#78797A',
   colorGreyRGB: '120, 121, 122',
   colorGreyDark: '#585959',

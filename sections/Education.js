@@ -34,7 +34,7 @@ const Education = () => {
   }, [])
 
   return (
-    <Section>
+    <Section id="education">
       <Container>
         <Row>
           <Heading align="center" size={1}>

@@ -31,7 +31,7 @@ const Hobbies = () => {
   }, [])
 
   return (
-    <Section>
+    <Section id="hobbies">
       <Container>
         <Row>
           <Heading align="center" color="black" size={1}>

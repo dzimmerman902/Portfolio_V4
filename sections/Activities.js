@@ -28,7 +28,7 @@ const Activities = () => {
   }, [])
 
   return (
-    <Section>
+    <Section id="activities">
       <Container>
         <Row>
           <Heading align="center" size={1}>

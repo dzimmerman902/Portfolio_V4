@@ -60,7 +60,7 @@ const Skills = () => {
   }, [])
 
   return (
-    <Section>
+    <Section id="skills">
       <Container>
         <Row>
           <Heading align="center" color="white" size={1}>
