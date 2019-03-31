@@ -13,7 +13,7 @@ const BUTTON_COLORS = {
       box-shadow: ${theme.boxShadow()};
     }
   `,
-  
+
   light: ({ theme }) => css`
     color: ${theme.colorWhite};
     border-color: ${theme.colorWhite};
@@ -45,9 +45,36 @@ const StyledButton = styled.button`
   }
 `
 
+const StyledButtonLink = styled.a`
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  display: inline-block;
+  padding: 1.1rem 3rem;
+  border: 1px solid white;
+  border-radius: 3rem;
+  cursor: pointer;
+
+  ${props => BUTTON_COLORS[props.color](props)}
+
+  &:focus {
+    outline: none;
+  }
+`
+
 const Button = props => {
-  const { children, color } = props
-  
+  const { children, color, download, link } = props
+
+  if (link) {
+    return (
+      <StyledButtonLink color={color} href={link} download={download}>
+        {children}
+      </StyledButtonLink>
+    )
+  }
+
   return <StyledButton color={color}>{children}</StyledButton>
 }
 

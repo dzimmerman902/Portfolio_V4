@@ -35,13 +35,24 @@ const SubTitle = styled.div`
   margin-bottom: 10rem;
 `
 
+const ButtonCont = styled.div`
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 2rem;
+`
+
 const Banner = () => (
   <Section id="home">
     <Container>
       <Header>
         <Title>Devin Zimmerman</Title>
         <SubTitle>Full Stack Web Developer</SubTitle>
-        <Button color="light">Portfolio</Button>
+        <ButtonCont>
+          <Button color="light" link="#projects">
+          Portfolio
+          </Button>
+          <Button color="light" link="/static/DevinResume.pdf" download="DevinResume">Resume</Button>
+        </ButtonCont>
       </Header>
     </Container>
   </Section>

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/dzimmerman902/Portfolio_V4#readme",
   "dependencies": {
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "if-env": "^1.0.4",
     "moment": "^2.24.0",
