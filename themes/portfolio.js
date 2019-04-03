@@ -39,27 +39,39 @@ const portfolioTheme = {
 
   // Resopne
   response(breakpoint, content) {
-    switch(breakpoint) {
-    case 'large':
-      return css`
-        @media only screen and (max-width: 1200px) {
-          ${content}
-        }
-      ` 
-    case 'medium':
-      return css`
-        @media only screen and (max-width: 1020px) {
-          ${content}
-        }
-      ` 
-    case 'small':
-      return css`
-        @media only screen and (max-width: 780px) {
-          ${content}
-        }
-      ` 
-    default:
-      return null
+    switch (breakpoint) {
+      case 'large':
+        return css`
+          @media only screen and (max-width: 1200px) {
+            ${content}
+          }
+        `
+      case 'medium':
+        return css`
+          @media only screen and (max-width: 1020px) {
+            ${content}
+          }
+        `
+      case 'small':
+        return css`
+          @media only screen and (max-width: 780px) {
+            ${content}
+          }
+        `
+      case 'x-small':
+        return css`
+          @media only screen and (max-width: 600px) {
+            ${content}
+          }
+        `
+      case 'xx-small':
+          return css`
+            @media only screen and (max-width: 400px) {
+              ${content}
+            }
+          `
+      default:
+        break;
     }
   }
 }

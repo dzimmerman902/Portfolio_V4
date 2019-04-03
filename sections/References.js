@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import Container from '../components/Container'
 import Heading from '../components/Heading'
@@ -15,10 +15,14 @@ const Section = styled.div`
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   grid-column-gap: 5rem;
   grid-row-gap: 5rem;
   margin-top: 7rem;
+
+  ${({ theme }) => theme.response('small', css`
+      grid-row-gap: 2rem;
+  `)}
 `
 
 const References = () => {

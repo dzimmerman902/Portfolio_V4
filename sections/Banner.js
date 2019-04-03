@@ -9,10 +9,26 @@ const Section = styled.section`
   background-image: ${portfolioTheme.backgroundImage(0.6)},
     url('/static/devin-1.jpg');
   background-size: cover;
+
+  ${({ theme }) => theme.response('medium', css`
+    height: 70rem;
+  `)}
+
+  ${({ theme }) => theme.response('small', css`
+    height: 60rem;
+  `)}
 `
 
 const Header = styled.div`
   padding-top: 22rem;
+
+  ${({ theme }) => theme.response('medium', css`
+    padding-top: 18rem;
+  `)}
+
+  ${({ theme }) => theme.response('small', css`
+    padding-top: 12rem;
+  `)}
 `
 
 const Title = styled.div`
@@ -38,7 +54,14 @@ const Title = styled.div`
       'medium',
       css`
         font-size: 7rem;
-        text-align: center;
+      `
+    )}
+
+  ${({ theme }) =>
+    theme.response(
+      'medium',
+      css`
+        font-size: 5rem;
       `
     )}
 `
@@ -73,6 +96,10 @@ const ButtonCont = styled.div`
         justify-content: center;
       `
     )}
+  ${({ theme }) => theme.response('x-small', css`
+      grid-template-columns: auto;
+      grid-row-gap: 2rem;
+  `)}
 `
 
 const Banner = () => (

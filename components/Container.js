@@ -30,6 +30,22 @@ const StyledContainer = styled.div`
       `
     )}
   };
+
+  ${({ theme }) =>
+    theme.response(
+      'x-small',
+      css`
+        max-width: 400px;
+      `
+    )}
+
+  ${({ theme }) =>
+    theme.response(
+      'xx-small',
+      css`
+        max-width: 350px;
+      `
+    )}
 `
 
 const Container = ({ children }) => (

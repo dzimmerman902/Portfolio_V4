@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Card = styled.div`
   padding: 1rem;
@@ -11,6 +11,11 @@ const Top = styled.div`
   align-items: center;
 
   margin-bottom: 1rem;
+
+  ${({ theme }) => theme.response('small', css`
+    grid-template-columns: 1fr;
+    justify-items: center;
+  `)}
 `
 
 const Img = styled.img`
@@ -22,6 +27,10 @@ const Img = styled.img`
 
 const Contact = styled.div`
   padding: 1rem;
+
+  ${({ theme }) => theme.response('small', css`
+    text-align: center;
+  `)}
 `
 
 const Name = styled.div`

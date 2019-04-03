@@ -13,7 +13,7 @@ const Section = styled.section`
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-column-gap: 5rem;
   grid-row-gap: 5rem;
 

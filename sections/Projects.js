@@ -42,7 +42,7 @@ const Projects = () => {
             Personal Projects
           </Heading>
 
-          <Paragraph align="center">
+          <Paragraph align="center" mb="3rem">
             <b>Hover/Click</b> picture for more information
           </Paragraph>
 
