@@ -12,16 +12,6 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%;
-
-    @media only screen and (max-width: 1200px) {
-      font-size: 56.25%;
-      padding: 0; 
-    } 
-
-    @media only screen and (max-width: 900px) {
-      font-size: 50%;
-    } 
-
   }
 
   body, div, span, applet, object, iframe,

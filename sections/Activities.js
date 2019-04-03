@@ -12,7 +12,7 @@ const Section = styled.section`
 
 const Content = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
   grid-column-gap: 10rem;
 `
 
@@ -31,11 +31,11 @@ const Activities = () => {
     <Section id="activities">
       <Container>
         <Row>
-          <Heading align="center" size={1}>
+          <Heading align="center" mb="4rem" size={1}>
             Extracurricular Activities
           </Heading>
 
-          <Content>
+          <Content> 
             {activities.sort((a, b) => a.order - b.order).map(item => <Activity key={item._id} {...item} />) || null}
           </Content>
         </Row>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import Skill from '../components/Skill'
 import Container from '../components/Container'
@@ -18,6 +18,10 @@ const Content = styled.div`
   grid-auto-rows: auto;
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
+
+  ${({ theme }) => theme.response('large', css`
+    grid-template-columns: 1fr;
+  `)}
 `
 
 const Card = styled.div`

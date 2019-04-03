@@ -14,7 +14,7 @@ const StyledHeading1 = styled.h1`
   font-weight: 700;
   text-align: ${props => props.align || 'left'};
 
-  margin-bottom: 2rem;
+  margin-bottom: ${({ mb }) => mb || '2rem'};
 `
 
 const StyledHeading3 = styled.h3`

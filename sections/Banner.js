@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import portfolioTheme from '../themes/portfolio'
 
 import Button from '../components/Button'
@@ -24,6 +24,23 @@ const Title = styled.div`
   text-transform: uppercase;
 
   margin-bottom: 2rem;
+
+  ${({ theme }) =>
+    theme.response(
+      'large',
+      css`
+        text-align: center;
+      `
+    )}
+
+  ${({ theme }) =>
+    theme.response(
+      'medium',
+      css`
+        font-size: 7rem;
+        text-align: center;
+      `
+    )}
 `
 
 const SubTitle = styled.div`
@@ -33,12 +50,29 @@ const SubTitle = styled.div`
   letter-spacing: 2px;
 
   margin-bottom: 10rem;
+
+  ${({ theme }) =>
+    theme.response(
+      'large',
+      css`
+        text-align: center;
+      `
+    )}
 `
 
 const ButtonCont = styled.div`
   display: inline-grid;
   grid-template-columns: auto auto;
   grid-column-gap: 2rem;
+
+  ${({ theme }) =>
+    theme.response(
+      'large',
+      css`
+        display: grid;
+        justify-content: center;
+      `
+    )}
 `
 
 const Banner = () => (
@@ -49,9 +83,14 @@ const Banner = () => (
         <SubTitle>Full Stack Web Developer</SubTitle>
         <ButtonCont>
           <Button color="light" link="#projects">
-          Portfolio
+            Portfolio
           </Button>
-          <Button color="light" link="/static/DevinResume.pdf" download="DevinResume">Resume</Button>
+          <Button
+            color="light"
+            link="/static/DevinResume.pdf"
+            download="DevinResume">
+            Resume
+          </Button>
         </ButtonCont>
       </Header>
     </Container>

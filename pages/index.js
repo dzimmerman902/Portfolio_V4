@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 import portfolioTheme from '../themes/portfolio'
 import GlobalStyle from '../themes/globalStyle'
@@ -16,24 +16,31 @@ import Sidebar from '../components/Sidebar'
 import References from '../sections/References'
 
 const Home = () => (
-  <ThemeProvider theme={portfolioTheme}>
-    <Fragment>
-      <GlobalStyle />
-      <main>
-        <Sidebar />
-        <Banner />
-        <Built />
-        <Employment />
-        <Skills />
-        <Education />
-        <Projects />
-        <References />
-        <Hobbies />
-        <Activities />
-        <Contact />
-      </main>
-    </Fragment>
-  </ThemeProvider>
+  <>
+    <Head>
+      <title>Devin Zimmerman</title>
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
+    <ThemeProvider theme={portfolioTheme}>
+      <>
+        <GlobalStyle />
+        <main>
+          <Sidebar />
+          <Banner />
+          <Built />
+          <Employment />
+          <Skills />
+          <Education />
+          <Projects />
+          <References />
+          <Hobbies />
+          <Activities />
+          <Contact />
+        </main>
+      </>
+    </ThemeProvider>
+  </>
 )
 
 export default Home

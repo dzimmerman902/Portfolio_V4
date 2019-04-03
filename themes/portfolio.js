@@ -1,3 +1,5 @@
+import { css } from 'styled-components'
+
 const portfolioTheme = {
   // Box Shadow Primary
   boxShadow() {
@@ -33,7 +35,33 @@ const portfolioTheme = {
   colorBlack: '#000000',
 
   // Font Family
-  fontFamilyPrimary: '"Raleway", sans-serif'
+  fontFamilyPrimary: '"Raleway", sans-serif',
+
+  // Resopne
+  response(breakpoint, content) {
+    switch(breakpoint) {
+    case 'large':
+      return css`
+        @media only screen and (max-width: 1200px) {
+          ${content}
+        }
+      ` 
+    case 'medium':
+      return css`
+        @media only screen and (max-width: 1020px) {
+          ${content}
+        }
+      ` 
+    case 'small':
+      return css`
+        @media only screen and (max-width: 780px) {
+          ${content}
+        }
+      ` 
+    default:
+      return null
+    }
+  }
 }
 
 export default portfolioTheme
