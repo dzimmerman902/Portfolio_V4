@@ -86,4 +86,7 @@ Button.propTypes = {
   color: PropTypes.string.isRequired
 }
 
+Button.defaultProps = {
+}
+
 export default Button

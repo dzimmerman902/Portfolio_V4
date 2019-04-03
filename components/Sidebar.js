@@ -97,8 +97,7 @@ const Collapse = styled.div`
 
   padding-top: 12rem;
   background-color: ${({ theme }) => theme.colorGreyDark};
-  transform: ${({ open }) =>
-    open ? 'translateX(0)' : 'translateX(-35rem)'};
+  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-35rem)')};
   transition: all 0.2s ease-in-out;
 `
 
@@ -139,6 +138,22 @@ const Link = styled.a`
   position: relative;
   padding: 1rem 4rem 1rem 2rem;
   z-index: 10;
+`
+
+const Footer = styled.div`
+  text-align: center;
+  padding-bottom: 2rem;
+`
+
+const Copyright = styled.div`
+  color: ${({ theme }) => theme.colorWhite};
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+`
+
+const Rights = styled.div`
+  color: ${({ theme }) => theme.colorWhite};
+  font-size: 1.2rem;
 `
 
 const navItems = [
@@ -193,10 +208,16 @@ const Sidebar = () => {
         <List>
           {navItems.map(item => (
             <Item key={item.id}>
-              <Link href={`#${item.name}`} onClick={() => setOpen(!open)}>{item.name}</Link>
+              <Link href={`#${item.name}`} onClick={() => setOpen(!open)}>
+                {item.name}
+              </Link>
             </Item>
           ))}
         </List>
+        <Footer>
+          <Copyright>&copy; by Devin Zimmerman</Copyright>
+          <Rights>All Rights Reserved</Rights>
+        </Footer>
       </Collapse>
     </Nav>
   )

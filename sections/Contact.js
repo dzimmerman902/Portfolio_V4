@@ -27,7 +27,7 @@ const Label = styled.div`
   letter-spacing: 2px;
   font-size: 1.4rem;
 
-  margin-bottom: 0.8rem;
+  margin-bottom: ${({ mb }) => mb || '0.8rem'};
 `
 
 const Link = styled.a`
@@ -35,8 +35,9 @@ const Link = styled.a`
   color: ${({ theme }) => theme.colorWhite};
   font-size: 2.4rem;
   font-weight: 600;
+
   display: block;
-  margin-bottom: 0.8rem;
+  margin-bottom: ${({ mb }) => mb || '0.8rem'};
 `
 
 const FindMe = styled.div``
@@ -50,36 +51,53 @@ const Contact = () => (
             <Heading align="center" size={1}>
               Get Connected
             </Heading>
+
             <Input label="Name" />
+
             <Input label="Email" />
+
             <Input label="Phone Number" />
+
             <TextArea label="Message" />
+            
             <Button color="primary">
               <i>Comming Soon</i>
             </Button>
           </Form>
           <FindMe>
-            <Label>
-              FIND ME ON THE WEB
-            </Label>
+            <Label>FIND ME ON THE WEB</Label>
+
             <Link
               href="https://linkedin.com/in/devin-zimmerman"
               target="_blank"
               rel="noopener noreferrer">
               linkedin
             </Link>
+
             <Link
               href="https://github.com/dzimmerman902"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+              mb="3rem">
               github
             </Link>
-            <Label>
-              EMAIL
-            </Label>
-            <Link color="white" size={3}>
-              dzimmerman902@gmail.com
-            </Link>
+
+            <Label>EMAIL</Label>
+
+            <Link mb="3rem">dzimmerman902@gmail.com</Link>
+
+            <Label>TELEPHONE</Label>
+
+            <Link mb="3rem">(407) 405-3519</Link>
+
+            <Label mb="1.4rem">RESUME</Label>
+
+            <Button
+              color="light"
+              link="/static/DevinResume.pdf"
+              download="DevinResume">
+              Download
+            </Button>
           </FindMe>
         </Content>
       </Row>

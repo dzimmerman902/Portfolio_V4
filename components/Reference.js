@@ -26,7 +26,7 @@ const Contact = styled.div`
 
 const Name = styled.div`
   color: ${({ theme }) => theme.colorWhite};
-  font-size: 2.0rem;
+  font-size: 2.2rem;
   font-weight: 700;
   text-transform: uppercase;
 
@@ -35,13 +35,13 @@ const Name = styled.div`
 
 const JobTitle = styled.div`
   color: ${({ theme }) => theme.colorWhite};
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
 `
 
 const Review = styled.div`
   color: ${({ theme }) => theme.colorWhite};
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.3;
 
   padding: 1rem;
