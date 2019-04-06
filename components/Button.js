@@ -32,6 +32,7 @@ const BUTTON_COLORS = {
 const StyledButton = styled.button`
   font-size: 2rem;
   letter-spacing: 2px;
+  text-align: center;
   text-transform: uppercase;
 
   padding: 1.1rem 3rem;
