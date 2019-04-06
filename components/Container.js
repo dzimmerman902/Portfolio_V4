@@ -11,8 +11,7 @@ const StyledContainer = styled.div`
         max-width: 960px;
       `
     )}
-  };
-
+    
   ${({ theme }) =>
     theme.response(
       'medium',
@@ -20,7 +19,6 @@ const StyledContainer = styled.div`
         max-width: 720px;
       `
     )}
-  };
 
   ${({ theme }) =>
     theme.response(
@@ -29,7 +27,6 @@ const StyledContainer = styled.div`
         max-width: 540px;
       `
     )}
-  };
 
   ${({ theme }) =>
     theme.response(

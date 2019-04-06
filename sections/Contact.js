@@ -103,7 +103,7 @@ const Contact = () => (
               <TextArea label="Message" />
 
               <Button color="primary">
-                <i>Comming Soon</i>
+                <i>Coming Soon</i>
               </Button>
             </Form>
           </Connected>
